@@ -26,16 +26,10 @@ public class 실습1 { // 자바코드는 모두 클래스안에서 작성해야
         System.out.printf("제 이름은 %s, 나이는 %d세, 키는 %.1fcm 입니다.\n", name, age1, height);
 
         //[6]
-        System.out.println("|￦_/|");
-        System.out.println("|q p| /}");
-        System.out.println("( 0 )\"\"\"￦");
-        System.out.println("|\"^\"`  |");
-        System.out.println("||_/=\\\\__|");
-
         System.out.println("|\\_/|");
         System.out.println("|q p|   /}");
-        System.out.println("(0) \"\"\"\\");
-        System.out.println("|\"^\"   |");
+        System.out.println("( 0 ) \"\"\"\\");
+        System.out.println("|\"^\"     |");
         System.out.println("||_/=\\\\__|");
 
 
