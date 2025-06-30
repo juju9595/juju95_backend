@@ -24,9 +24,9 @@ public class Example3 { //class start
 
 
             [자동완성]
-                System.out.print();     :자동완성없음.
-                System.out.println();   : sout + 엔터
-                System.out.printf();    : souf + 엔터
+                System.out.print();     :자동완성없음.    출력
+                System.out.println();   : sout + 엔터    출력후 줄바꿈
+                System.out.printf();    : souf + 엔터     서식(형식) 맞춤 출력
 
             [ 이스케이프 / 제어 문자] : 특수문자에 기능이 포함
                 \n : 줄바꿈

@@ -19,8 +19,8 @@ public class Example2 { // class start : 모든 자바코드는 클래스안에 
         //(5) 자료형/타입 , 8가지              *기본자료형 vs 참조자료형
             // 정수 : byte , short , int(*), long
             // 실수 : float, double(*)
-            // 문자 : char            문자열 : String
-            // 논리 : boolean
+            // 문자 : char            문자열 : String "" 큰따옴표 감싼 문자여러개
+            // 논리 : boolean     true/false
         //(6) 리터럴값을 변수(*하나의 자료를 저장*)에 대입하기.
         // =============> 자료형 변수명 = 리터럴; ===========
             // 1. boolean 타입 : true 와 false 만 저장
