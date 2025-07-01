@@ -48,7 +48,7 @@ public class Example2 { //class s
         //5. nextInt(); : 입력받은 정수(int)반환. 입력값이 int 허용범위 벗어나면 오류
         System.out.println("5. nextInt():");
         int value3 = scan.nextInt();
-        System.out.println("5. nextint() result :"+ value3);
+        System.out.println("5. nextInt() result :"+ value3);
 
         //6. nextLong(); : 입력받은 정수(long)반환, 입력받아 long 허용범위 벗어나면 오류
         System.out.println("6. nextLong():");
