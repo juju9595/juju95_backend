@@ -73,7 +73,7 @@ public class Example1 {//class s
         for(; ;){
         //while(true){
             System.out.println("무한입력 [종료:'x'] :");
-            String input = new Scanner(System.in).next(); //키볻로부터 입력받아 저장
+            String input = new Scanner(System.in).next(); //키보드로부터 입력받아 저장
             if(input.equals("x")){break;} // 만약에 입력한 문자열이 "x" 이면 반복문 탈출, 무한루프 종료
         }//
 

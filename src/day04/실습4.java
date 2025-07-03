@@ -356,6 +356,13 @@ public class 실습4 {//class s
         }
 
  */
+        System.out.println("연도를 입력하세요");
+        int year = scan.nextInt();
+        if( (year%4 ==0 && year%100 !=0) || (year%400 ==0)){
+            System.out.println(year + "년은 윤년입니다.");
+        }else{
+            System.out.println(year + "년은 평년입니다.");
+        }
 
 
 /*
@@ -367,8 +374,8 @@ public class 실습4 {//class s
         세 번째 정수: 8
         출력 예시:
         4, 8, 17
-*/
-        // 변수들간이 값 교체 (ㅅ왐 = swap) : let temp = a; a=b ; b=temp;
+
+        // 변수들간이 값 교체 (스왑 = swap) : let temp = a; a=b ; b=temp;
         // 변수란? 하나의 자료만 저장 가능한 공간 즉] a란 변수에 b값이 들어오면 기존 a값은 사라진다.
         // 비교 : a b c : (1) a > b (2) a > c (3) b > c
         System.out.println("첫 번째 정수:");
@@ -381,7 +388,21 @@ public class 실습4 {//class s
         if(a> c){int temp = a; a=c; c=temp;}
         if(b >c){int temp = b; b=c; c=temp;}
         System.out.printf(" %d -> %d -> %d \n" ,a, b, c);
+        */
+        //let temp = a; a=b ; b=temp;
+        System.out.println("첫 번째 정수");
+        int score = scan.nextInt();
+        System.out.println("두 번째 정수");
+        int score1 = scan.nextInt();
+        System.out.println("세 번째 정수");
+        int score2 = scan.nextInt();
+        if(score > score1){int temp = score; score = score1; score1=temp;}
+        if (score > score2) {int temp = score; score = score2; score2=temp;}
+        if (score1 > score2) {int temp = score1; score1 = score2; score2=temp;}
+        System.out.printf("%d -> %d -> %d\n", score, score1, score2);
+
         /*
+
         [문제 15] 가위바위보 게임
         지시: 두 명의 플레이어가 참여하는 가위바위보 게임을 만드시오.
         입력: 플레이어 1과 플레이어 2는 각각 0(가위), 1(바위), 2(보) 중 하나의 숫자를 Scanner로 입력합니다.
