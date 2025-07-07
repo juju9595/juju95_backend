@@ -154,9 +154,9 @@ public class 실습6 {//class s
 
             int price = 1000;//기본 요금: 최초 30분까지 1,000원
             if( minutes > 30 ){//30분 초과 시
-                int extraMinutes = minutes -30; //초과 시간 계산
-                int extraUnits = (extraMinutes+9)/10; //10분 단위로 나눔
-                price += extraUnits * 500; // 추가요금 계산
+                int Min = minutes -30; //초과 시간 계산
+                int Units = (Min+9)/10; //10분 단위로 나눔
+                price += Units * 500; // 추가요금 계산
             }
             if(price >20000){
             price =20000;

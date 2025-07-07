@@ -4,6 +4,7 @@ import 종합.예제3.Board;
 
 import java.awt.*;
 import java.util.PrimitiveIterator;
+import java.util.Scanner;
 
 //=========1) .java 파일내 여러개 클래스 선언=========//
 class Book{
@@ -141,13 +142,23 @@ public class 실습7 {//class s
         m2.name = "된장찌개"; m1.price = 8000; m1.isSignature = false;
         m3.name = "계란찜"; m3.price = 3000; m3.isSignature = false;
 
-        System.out.println("");
+        MenuItem[] menuList = { m1, m2, m3 };
 
+        for (MenuItem menu : menuList) {
+            if (menu.isSignature) {
+                System.out.println("[대표메뉴] " + menu.name + " : " + menu.price + "원");
+            }
+        }
 //[문제 10] UserProfile 클래스를 만드세요. name(문자열), age(정수), mbti(문자열) 멤버 변수를 가집니다.
 //        1. main 함수에서 UserProfile 객체를 하나 생성하세요.
 //        2. Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 순서대로 입력받으세요.
 //        3. 입력받은 값들을 생성된 객체의 각 멤버 변수에 저장하세요.
 //        3. 모든 정보가 저장된 객체의 멤버 변수들을 가져와 "--- 프로필 ---", "이름: [이름]", "나이: [나이]", "MBTI: [MBTI]" 형식으로 출력하세요.
 
+//        UserProfile u1 = new UserProfile();
+//        System.out.println("이름: ");
+//        System.out.println("나이: ");
+//        System.out.println("MBTI: ");
+//        u1.name =
     }//main e
 }//class e
