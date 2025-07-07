@@ -120,18 +120,18 @@ public class 실습6 {//class s
 //        글래디에이터2  ★★★★★★★☆☆☆
 //        청설          ★★★★★★☆☆☆☆
 //
-//        String[] movieNames = {"히든페이스", "위키드", "글래디에이터2", "청설"};
-//        int[] movieRatings = {8, 4, 7, 6};
-//        for(int index = 0; index <= movieNames.length -1; index++){
-//            String movie = movieNames[index]; //index번째 영화 이름 추출
-//            System.out.println(movie);//index번째 영화 이름 출력
-//            for(int star =1; star <=10; star++){ //[평점]
-//                //만약에 평점이 현재 별보다 크거나 같으면 검은별, 아니면 흰별
-//                if(star <= movieRatings[index]){System.out.print("★");}
-//                else {System.out.print("☆");}
-//            }// for2 e
-//            System.out.println();//줄바꿈 처리
-//        }//for e
+        String[] movieNames = {"히든페이스", "위키드", "글래디에이터2", "청설"};
+        int[] movieRatings = {8, 4, 7, 6};
+        for(int index = 0; index <= movieNames.length -1; index++){
+            String movie = movieNames[index]; //index번째 영화 이름 추출
+            System.out.println(movie);//index번째 영화 이름 출력
+            for(int star =1; star <=10; star++){ //[평점]
+                //만약에 평점이 현재 별보다 크거나 같으면 검은별, 아니면 흰별
+                if(star <= movieRatings[index]){System.out.print("★");}
+                else {System.out.print("☆");}
+            }// for2 e
+            System.out.println();//줄바꿈 처리
+        }//for e
 
 //[문제 10] 차량별 주차 시간 데이터가 주어졌을 때, 아래의 요금 규정에 따라 각 차량이 지불해야 할 최종 주차 요금을 계산하여 출력하시오.
 //        요금 규정:
@@ -148,21 +148,21 @@ public class 실습6 {//class s
 //        931나8234: 420분 주차, 최종 요금: 20000원
         String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"};
         int[] usageMinutes = {65, 30, 140, 420};
-        int index = 0;
-        Scanner scan = new Scanner( System.in);
-        for(String carNumber : carNumbers){
-            int minutes = usageMinutes[index];
+        for(int i = 0; i <=carNumbers.length-1; i++){
+            String carNumber = carNumbers[i];
+            int minutes = usageMinutes[i];
 
-            int price = 1000;
-            if( minutes > 30 ){
-                int extraMinutes = minutes -30;
-                int extraUnits = (int)Math.ceil(extraMinutes /10.0);
-                price += extraUnits * 500;
+            int price = 1000;//기본 요금: 최초 30분까지 1,000원
+            if( minutes > 30 ){//30분 초과 시
+                int extraMinutes = minutes -30; //초과 시간 계산
+                int extraUnits = (extraMinutes+9)/10; //10분 단위로 나눔
+                price += extraUnits * 500; // 추가요금 계산
             }
             if(price >20000){
             price =20000;
-        }
-        System.out.println(carNumber + ":" + minutes + "분 주차, 최종 요금 : " + price +"원");index++;
-        }
+
+            }
+        System.out.println(carNumber + ":" + minutes + "분 주차, 최종 요금 : " + price +"원");
+        }//for e
     }//main e
 }//class e
