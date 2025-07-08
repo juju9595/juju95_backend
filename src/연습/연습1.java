@@ -18,6 +18,9 @@ public class 연습1 {//class s
                 String phone = scan.next();
                 System.out.print("인원수 : ");
                 int count = scan.nextInt();
+            } else if (choose == 2) {
+                System.out.print("");
+
             }
         }
 
