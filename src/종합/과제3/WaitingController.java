@@ -5,7 +5,7 @@ public class WaitingController {
     Waiting[] waitings = new Waiting[100];
     //2. 메소드
     //2-1 등록 메소드
-    boolean addWaiting(String phone, String count){
+    boolean addWaiting(String phone, int count){
         Waiting waiting = new Waiting();// -객체생성
         waiting.phone = phone; //매개변수로 phone과 count를 받습니다.
         waiting.count = count;

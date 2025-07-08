@@ -18,7 +18,7 @@ public class 종합과제3 {
                 System.out.print("전화번호 : ");
                 String phone = scan.next();
                 System.out.print("인원수 : ");
-                String count = scan.next();
+                int count = scan.nextInt();
                 //(6)메소드 getWaitingList() 전체를 반환(return)
                 boolean result = //addWaiting에서 true 반환이면
                         controller.addWaiting(phone, count); //입력받은 구 값을 인수로 전달
