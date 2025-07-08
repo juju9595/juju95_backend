@@ -78,6 +78,11 @@ public class 실습8 {//class s
 //        일일 최대 요금: 20,000원
 //        3. main 함수에서 calculateFee 메소드에 65, 140을 각각 인자로 전달하여 반환된 요금을 출력하세요.
 //
+        ParkingLot park1 = new ParkingLot();
+        int result9 = park1.calculateFee(65);
+        System.out.println(result9);
+        int result10 = park1.calculateFee(140);
+        System.out.println(result10);
 
     }//main e
 }//class e
