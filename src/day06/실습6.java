@@ -153,15 +153,16 @@ public class 실습6 {//class s
         //(2) 배열의 순회
         int money = 0;
         for(int i = 0; i <=carNumbers.length-1; i++){
-            System.out.println( carNumbers[i]);// 모든 차량 번호 출력
-            System.out.println( usageMinutes[i]); // 모든 차량의 사용 시간 출력
+//            System.out.println( carNumbers[i]);// 모든 차량 번호 출력
+//            System.out.println( usageMinutes[i]); // 모든 차량의 사용 시간 출력
 
             if( usageMinutes[i] <= 30){money = 1000;}//기본요금
             else { //사용 요금에 30분 빼고 (10분당) 나누기 10 (나머지 없음 : int/int ->int(몫)
                 money = ((usageMinutes[i] - 30) /10 * 500) + 1000;
             }
             money = money >= 20000? 20000 : money; // 만약에 금액이 2만원 초과이면 2만원, 아니면 금액 그대로
-            System.out.println(money);
+//            System.out.println(money);
+            System.out.println(carNumbers[i]+": "+usageMinutes[i]+"분 주차, 최종 요금: "+money);
         }//for e
     }//main e
 }//class e
