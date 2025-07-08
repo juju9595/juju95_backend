@@ -146,23 +146,22 @@ public class 실습6 {//class s
 //        142가7415: 30분 주차, 최종 요금: 1000원
 //        888호8888: 140분 주차, 최종 요금: 6500원
 //        931나8234: 420분 주차, 최종 요금: 20000원
-        String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"};
-        int[] usageMinutes = {65, 30, 140, 420};
+
+        //(1) 자바 에서의 배열은 서로 다른 타입간의 데이터를 동일한 배열에 저장할 수 없다.
+        String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"}; //String 타입 끼리
+        int[] usageMinutes = {65, 30, 140, 420}; //int 끼리
+        //(2) 배열의 순회
+        int money = 0;
         for(int i = 0; i <=carNumbers.length-1; i++){
-            String carNumber = carNumbers[i];
-            int minutes = usageMinutes[i];
+            System.out.println( carNumbers[i]);// 모든 차량 번호 출력
+            System.out.println( usageMinutes[i]); // 모든 차량의 사용 시간 출력
 
-            int price = 1000;//기본 요금: 최초 30분까지 1,000원
-            if( minutes > 30 ){//30분 초과 시
-                int Min = minutes -30; //초과 시간 계산
-                int Units = (Min+9)/10; //10분 단위로 나눔
-                price += Units * 500; // 추가요금 계산
+            if( usageMinutes[i] <= 30){money = 1000;}//기본요금
+            else { //사용 요금에 30분 빼고 (10분당) 나누기 10 (나머지 없음 : int/int ->int(몫)
+                money = ((usageMinutes[i] - 30) /10 * 500) + 1000;
             }
-            if(price >20000){
-            price =20000;
-
-            }
-        System.out.println(carNumber + ":" + minutes + "분 주차, 최종 요금 : " + price +"원");
+            money = money >= 20000? 20000 : money; // 만약에 금액이 2만원 초과이면 2만원, 아니면 금액 그대로
+            System.out.println(money);
         }//for e
     }//main e
 }//class e

@@ -147,9 +147,9 @@ public class 실습7 {//class s
 //        세 번째는 "계란찜", 3000, false로 저장하세요.
 //        2. if문을 사용하여 isSignature가 true인 메뉴 객체를 찾아, "[대표메뉴] [메뉴이름] : [가격]원" 형식으로 출력하세요.
 //
-        MenuItem m1 = new MenuItem();
-        MenuItem m2 = new MenuItem();
-        MenuItem m3 = new MenuItem();
+        MenuItem m1 = new MenuItem();//MenuItem 객체 생성
+        MenuItem m2 = new MenuItem();//MenuItem 객체 생성
+        MenuItem m3 = new MenuItem();//MenuItem 객체 생성
         m1.name = "김치찌개"; m1.price = 8000; m1.isSignature = true; //첫 번째는 "김치찌개", 8000, true
         m2.name = "된장찌개"; m2.price = 8000; m2.isSignature = false; //두 번째는 "된장찌개", 8000, false
         m3.name = "계란찜"; m3.price = 3000; m3.isSignature = false; //세 번째는 "계란찜", 3000, false
@@ -167,8 +167,10 @@ public class 실습7 {//class s
 //        2. Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 순서대로 입력받으세요.
 //        3. 입력받은 값들을 생성된 객체의 각 멤버 변수에 저장하세요.
 //        3. 모든 정보가 저장된 객체의 멤버 변수들을 가져와 "--- 프로필 ---", "이름: [이름]", "나이: [나이]", "MBTI: [MBTI]" 형식으로 출력하세요.Scanner scan = new Scanner(System.in);
-        UserProfile u1 = new UserProfile();
         Scanner scan = new Scanner(System.in);
+
+        UserProfile u1 = new UserProfile();
+
         System.out.println("이름: ");
         String name = scan.next();//입력받은 값들을 생성된 객체의 각 멤버 변수에 저장하세요.
 
