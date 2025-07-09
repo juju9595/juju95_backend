@@ -19,7 +19,10 @@ public class 연습1 {//class s
                 System.out.print("인원수 : ");
                 int count = scan.nextInt();
             } else if (choose == 2) {
-                System.out.print("");
+                System.out.println("============= 대기 현황 =============");
+                System.out.print("연락처: ");
+                System.out.println("- 인원: ");
+                System.out.println("------------------------------------");
 
             }
         }

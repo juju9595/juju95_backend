@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class BankService {//class s
     public static void main(String[] args) {//main s
 
+        BankController controller = new BankController();
+
         for(;;){//(1) 무한루프 : 프로그램 계속적으로 실행하기 위해서
             System.out.println("============== KB Bank  ==============");
             System.out.println("1.계좌등록 | 2.입금 | 3.출금 | 4.잔고");
