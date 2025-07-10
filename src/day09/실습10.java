@@ -56,6 +56,16 @@ public class 실습10 { //class s
 //        4. main 함수에서 TicketMachine 객체 3개(machine1, machine2, machine3)를 생성하세요.
 //        5. machine1으로 티켓 2장, machine2로 티켓 1장을 발권한 뒤, TicketMachine.printTotalTickets()를
 //        호출하여 총 발권 수가 올바르게 나오는지 확인하세요.
+        TicketMachine machine1 = new TicketMachine();
+        TicketMachine machine2 = new TicketMachine();
+        TicketMachine machine3 = new TicketMachine();
+
+        machine1.issueTicket();
+        machine1.issueTicket();
+        machine2.issueTicket();
+
+        TicketMachine.printTotalTickets();
+
 //
 //[문제 6] 게임의 고정 설정 값을 관리하는 GameConfig 클래스를 만드세요.
 //        1. 이 클래스 안에, 어디서든 접근 가능하며 절대 변하지 않는 다음 상수들을 public static final로 선언하세요.
@@ -63,10 +73,9 @@ public class 실습10 { //class s
 //        최대 HP MAX_HP = 10000
 //        게임 이름 GAME_TITLE = "My RPG"
 //        2. main 함수에서 객체를 생성하지 않고, GameConfig.GAME_TITLE과 같이 클래스 이름으로 직접 접근하여 모든 설정 값을 출력하세요.
-
-
-
-
+        System.out.println("최대 레벨 MAX_LEVEL = "+ GameConfig.MAX_LEVEL);
+        System.out.println("최대 HP MAX_HP = "+ GameConfig.MAX_HP);
+        System.out.println("게임 이름 GAME_TITLE = "+ GameConfig.GAME_TITLE);
 
 
 
