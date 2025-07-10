@@ -34,10 +34,15 @@ public class BankService {//class s
                 System.out.println("비밀번호 : ");
                 String password = scan.next();
                 System.out.println("입금액 : ");
-                int pAdd = scan.nextInt();
+                int deposit = scan.nextInt();
+
+                boolean result2 = controller.doPost(accountNum, password);
+                if(result2){
+                    System.out.println("[안내] 입금이 완료되었습니다.");
+                }
 
 
-                System.out.println("[안내] 입금이 완료되었습니다.");
+
             }else if(choose == 3) {
                 System.out.println("--- 출금 ---");
                 System.out.println("계좌번호 : ");
