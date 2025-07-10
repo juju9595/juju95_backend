@@ -15,8 +15,8 @@ public class BoardController {
         Board board = new Board(content, writer);//(1) 생성자를 이용한 객체 만들기
         for(int index = 0; index <=boards.length -1; index++) {//(2) 배열내 빈공간을 찾아서 생성된 객체 대입
             if(boards[index] == null){//-만약에 index번째 요소가 null 이면
-            boards[index] = board; //index번째 에 생성한 객체 대입
-            return true;// return 이란 메소드 값 반환 이면서 메소드의 종료를 뜻한다.
+                boards[index] = board; //index번째 에 생성한 객체 대입
+                return true;// return 이란 메소드 값 반환 이면서 메소드의 종료를 뜻한다.
             }//if e
         }//for e
         return false;//for 에서 null 이 존재하지 않을때 false 반환
