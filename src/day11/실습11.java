@@ -81,15 +81,17 @@ public class 실습11 {//class s
 //        1. 입력받은 문자열은 ArrayList에 순서대로 저장합니다.
 //        2. 만약 사용자가 "종료" 라는 단어를 입력하면, 입력을 멈추고 그때까지 리스트에 저장된 모든 내용을 출력한 뒤 프로그램을 종료하세요.
 //
-        ArrayList <String> str = new ArrayList<>();
-
         for(;;){
             Scanner scan = new Scanner(System.in);
-        if(str.equals("종료")){
-            System.out.println(str);
-            break;
+            ArrayList <String> str = new ArrayList<>();
+            if(str.equals("종료")){
+                System.out.println(str);
+                break;
             }
-        };
+        }
+
+
+
 
 
 
