@@ -16,5 +16,4 @@ public class BankController {
         return false;//for 에서 null 이 존재하지 않을때 false 반환
     }
 
-    }
 }
