@@ -84,7 +84,7 @@ select title, author from books where author like '김__';
 select *from books order by price desc;
 -- [문제 9] books 테이블의 모든 도서 정보를 출판일(pub_date)이 오래된 순(오름차순)으로 정렬하되, 
 -- 출판일이 같다면 제목(title)의 가나다순(오름차순)으로 정렬하세요.
-select *from books order by pub_date asc, pub_date = title asc;
+select *from books order by pub_date asc, title asc;
 -- [문제 10] books 테이블에서 가격이 가장 저렴한 도서 3개의 title과 price를 조회하세요.
 select title, price from books order by price asc limit 3;
 -- [문제 11] books 테이블에서 가격(price)이 14000원에서 18000원 사이인 도서의 title과 price를 조회하세요. (BETWEEN 연산자 사용)
@@ -96,7 +96,7 @@ select *from books where genre != '소설' and genre != '역사';
 -- [문제 14] books 테이블에서 장르가 '컴퓨터'이고 가격이 20000원 미만이며, 재고가 20권 이상인 도서의 title을 조회하세요.
 select title from books where genre = '컴퓨터' and price < 20000 and stock >= 20;
 -- [문제 15] books 테이블의 모든 도서 정보를 장르(genre)의 가나다순(오름차순)으로 정렬하되, 같은 장르 내에서는 가격(price)이 비싼 순(내림차순)으로 정렬하세요.
-select *from books order by genre asc, genre = price desc;
+select *from books order by genre asc, price desc;
 -- [문제 16] books 테이블에서 저자명(author)이 '이'씨가 아닌 도서의 title과 author를 조회하세요.
 select title, author from books where not author like '이__';
 -- [문제 17] books 테이블에서 재고(stock) 정보가 있는(NULL이 아닌) 도서의 title과 stock을 조회하세요.
