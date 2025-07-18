@@ -71,9 +71,10 @@ select maddr as 주소 from member;				-- 조회 결과 속성 값들의 중복�
 select distinct maddr as 주소 from member;	-- 속성 값들의 중복 제거
 
 # [3] 산술연산자 , +더하기 , - 빼기 , *곱하기, /나누기 , div 몫 , mod 나머지
-select mnumber as 인원수, mnumber +3 as 더하기, mnumber - 3 as 뺴기 , mnumber *3 as 곱하기 ,
+select mnumber as 인원수, mnumber +3 as 더하기, mnumber - 3 as 빼기 , mnumber *3 as 곱하기 ,
 	mnumber / 3 as 나누기 , mnumber div 3 as 몫 , mnumber mod 3 as 나머지
 from member;
+select (산술) from 테이블명 where (산술)
 
 # [4]
 # 비교연산자 : > 초과 <미만 >=이상 <=이하 =같다 !=같지않다
@@ -116,4 +117,8 @@ select *from member limit 2;	-- 조회 결과에서 상위2개만 제한
 select *from member limit 0, 2;	-- 조회 결과에서 0번 레코드 부터 2개 제한
 select *from member limit 2, 3; -- 2번 레코드 부터 3개 제한
 select *from member order by mheight desc limit 3; -- mheight 속성값들을 내림차순으로 정렬 후 상위 3개
+
+[ 키워드 작성 순서 ]
+    [select] 속성명 [from] 테이블명 [where] 조건절 [order by] 속성명 asc/desc [limit] 개수;
+           [3]         [1]         [2]          [4]                  [5]
  
