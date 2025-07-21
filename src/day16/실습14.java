@@ -35,7 +35,7 @@ public class 실습14 {//class s
 //        int value = Integer.parseInt(notANumber);
         try {
             String notANumber = "오류";
-            int value = Integer.parseInt(notANumber);
+            int value = Integer.parseInt(notANumber); // 예외 발생 이유 : For input string: "오류", 문자는 숫자 타입 변환 불가
         } catch (NumberFormatException e){
             System.out.println("잘못된 숫자 형식입니다.");
         }
