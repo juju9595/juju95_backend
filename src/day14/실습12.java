@@ -1,6 +1,7 @@
 package day14;
 ////[1]
 //class Person{//Person 클래스
+//   1. 클래스의 멤버 : 멤버변수 = 특징/상태, 생성자 = 초기화, 메소드 = 행동/이벤트
 //    String name;
 //}
 //class Student extends Person{
@@ -14,7 +15,7 @@ package day14;
 //    }
 //}
 //class Cat extends Animal{
-//    void makesound(){
+//    void makesound(){ // 오버라이딩 조건 : 부모타입의 메소드명의 선언부를 동일하면 된다.
 //        System.out.println("고양이가 야옹하고 웁니다.");
 //    }
 //}
@@ -126,13 +127,16 @@ public class 실습12 {//class s
 //
 //        //(1) Student 객체 생성
 //        Student student = new Student();
+//        Student student : 변수 , new Student(); 인스턴스/객체 생성
 //        //(2) 상속받은 name과 자신의 studentId에 값을 저장
-//        student.name = "유재석";
-//        student.studentId = 1;
+//        student.name = "유재석";   //부모의 멤버변수
+//        student.studentId = 1;    //본인의 멤버변수
 //        //(3) 모두 출력
 //        System.out.println(student.name);
 //        System.out.println(student.studentId);
 //
+
+
 ////[문제 2] 메소드 오버라이딩 (Method Overriding)
 ////        1. "동물이 소리를 냅니다."를 출력하는 makeSound() 메소드를 가진 Animal 클래스를 만드세요.
 ////        2. Animal을 상속받고, makeSound() 메소드를 재정의하여 "고양이가 야옹하고 웁니다."를 출력하는 Cat 클래스를 만드세요.

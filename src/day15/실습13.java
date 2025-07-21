@@ -1,5 +1,24 @@
 package day15;
 
+
+
+// [문제1]
+interface Soundable{
+    //인터페이스 주요 멤버 : 상수 , 추상메소드 : 구현부{}없는 메소드
+    void makeSound();//publice abstract 생략가능 / 추상메소드 ......* {}있으면 구현
+}
+class Cat implements Soundable{
+    // 오버라이딩 자동완성 : 클래스 안에서 컨트롤+스페이바 -> 방향키 위로 -> 선택후 엔터
+    @Override public void makeSound() {System.out.println("야옹");}
+}
+class Dog implements Soundable{
+    @Override public void makeSound() {System.out.println("멍멍");}
+}
+
+interface RemoteControl{
+    public static final int MAX_VOLUME = 10;
+    int MIN_VOLUME = 0; // public static final 생략 가능
+}
 public class 실습13 {//class s
     public static void main(String[] args) {//main s
 
@@ -14,11 +33,17 @@ public class 실습13 {//class s
 //            3. 각 클래스에서 makeSound() 메소드를 오버라이딩하여, 각각 "야옹", "멍멍"을 출력하도록 구현하세요.
 //4. main 함수에서 Cat 객체와 Dog 객체를 생성하고, 각 객체의 makeSound() 메소드를 호출하여 결과를 확인하세요.
 //
-//            [문제 2] 인터페이스 상수
+        new Cat().makeSound();//변수를 쓰지 않아 재사용 불가
+        Soundable s1 = new Dog(); s1.makeSound();
+
+//[문제 2] 인터페이스 상수
 //1. RemoteControl 인터페이스를 만드세요.
-//2. 이 인터페이스 안에, public static final로 최대 볼륨 MAX_VOLUME = 10과 최소 볼륨 MIN_VOLUME = 0 상수를 정의하세요.
-//            3. main 함수에서 객체를 생성하지 않고, RemoteControl.MAX_VOLUME과 같이 인터페이스 이름으로 직접 접근하여 두 상수를 출력하세요.
-//
+//2. 이 인터페이스 안에, public static final로 최대 볼륨 MAX_VOLUME = 10과 최소 볼
+// 륨 MIN_VOLUME = 0 상수를 정의하세요.
+//3. main 함수에서 객체를 생성하지 않고, RemoteControl.MAX_VOLUME과
+//같이 인터페이스 이름으로 직접 접근하여 두 상수를 출력하세요.
+        System.out.println(RemoteControl.MAX_VOLUME);
+        System.out.println(RemoteControl.MIN_VOLUME);
 //[문제 3] 다형성: 인터페이스 타입 변환
 //1. "달립니다."라는 추상 메소드 run()을 가진 Runnable 인터페이스를 정의하세요.
 //            2. Runnable을 구현하여 각각 "사람이 달립니다.", "자동차가 달립니다."를 출력하는 Person 클래스와 Car 클래스를 만드세요.
