@@ -87,7 +87,7 @@ public class 실습11 {//class s
             Scanner scan = new Scanner(System.in);
             String content = scan.nextLine();
 
-            if(str.equals("종료")){
+            if(content.equals("종료")){
                 break;
             }
             str.add(content);
