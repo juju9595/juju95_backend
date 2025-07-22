@@ -32,13 +32,13 @@ package day14;
 //    }
 //}
 //
-////[4]
-//class Figure{
-//
-//}
-//class Triangle extends Figure{
-//
-//}
+//[4]
+class Figure{
+
+}
+class Triangle extends Figure{
+
+}
 //
 ////[5]
 //class Shape{
@@ -172,10 +172,12 @@ public class 실습12 {//class s
 ////        2. Figure를 상속받는 Triangle 클래스를 만드세요.
 ////        3. main 함수에서 Triangle 객체를 생성하여 Figure 타입의 변수에 저장하는 코드를 작성하고, 이것이 가능한 이유를 주석으로 설명하세요.
 ////
-//         //(1)Triangle 객체를 생성
-//        Triangle triangle = new Triangle();
-//        Figure trangle = new Figure();
-//
+         //(1)Triangle 객체를 생성
+        Triangle triangle = new Triangle();
+        Figure figure = triangle;
+
+        //Triangle 이 Figure 를 상속받았기 때문에 Figure 가 부모이기 때문에 자식인 Triangle 타입의 변수를 저장 할 수 있다.
+
 //
 ////[문제 5] 다형성과 오버라이딩
 ////        1."도형을 그립니다."를 출력하는 draw() 메소드를 가진 Shape 클래스를 만드세요.
