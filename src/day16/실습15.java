@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 public class 실습15 {//class s
     public static void main(String[] args) {//main s
+
+        //***파일 처리 : 자바외 저장소로 영구저장 가능하다.***
+
 //[JAVA] 실습15 : 파일 처리
 //[ 문제 ] 아래 파일 처리 관련 문제를 해결하시오.
 //[ 제출방법 ] 코드가 작성된 파일이 위치한 깃허브 상세 주소를 제출하시오.
@@ -15,29 +18,41 @@ public class 실습15 {//class s
 //        2. "오늘 날씨는 맑았다. 자바 공부는 재미있다." 라는 문자열을 바이트로 변환하여 파일에 쓰세요.
 //        3. try-catch를 사용하여 예외 처리하세요.
 //
-//        String path = "./src/day16/diary.txt";
-//        try {
-//            FileOutputStream diary = new FileOutputStream(path);
-//            diary.write("오늘 날씨는 맑았다. 자바 공부는 재미있다.".getBytes());
-//        }catch (FileNotFoundException e){
-//            System.out.println("파일 또는 경로가 존재하지 않습니다."+ e);
-//        }catch (IOException e){
-//            System.out.println("입출력 도중에 오류가 발생했다" +e);
-//        }
+        //(1) 파일의 경로 지정
+        String path = "./src/day16/diary.txt";
+        try { // try{ 예외가 발생할것 같은 또는 일반예외 }
+        //(2) 출력 객체 생성, 일반예외 발생 , try ~ catch
+            FileOutputStream diary = new FileOutputStream(path);
+        //(3) 출력할 내용
+            String str = "오늘 날씨는 맑았다. 자바 공부는 재미있다.";
+        //(4)
+        byte[] outBytes = str.getBytes();
+        //(5) 바이트 내보내기, 일반예외 발생, try~catch
+        diary.write(outBytes);
+        }catch (FileNotFoundException e){ // catch(예외클래스명 변수명){예외일때코드;}
+            System.out.println("파일 또는 경로가 존재하지 않습니다."+ e);
+        }catch (IOException e){
+            System.out.println("입출력 도중에 오류가 발생했다" +e);
+        }
 
 //[문제 2] 파일에 작성된 일기 읽기
 //        1. FileInputStream을 사용하여 문제 1에서 생성한 src/diary.txt 파일을 읽어오세요.
 //        2. 읽어온 바이트 데이터를 String으로 변환하여 콘솔에 출력하세요.
-//        try {
-//            FileInputStream diary = new FileInputStream(path);
-//            byte[] bytes = new byte[58];
-//            diary.read(bytes);
-//            System.out.println(new String(bytes));
-//        }catch (FileNotFoundException e){
-//            System.out.println("파일 또는 경로가 존재하지 않습니다."+ e);
-//        }catch (IOException e){
-//            System.out.println("파일 읽어오는데 문제가 발생했습니다"+e);
-//        }
+        try {
+            //(2) 입력 객체 생성
+            FileInputStream diary = new FileInputStream(path);
+            //(3) 가져올 바이트를 저장할 배열 선언(파일 크기만)
+            File file = new File(path); // 파일객체
+            byte[] inBytes = new byte[(int) file.length()];
+            //(4) 읽어온 바이트를 배열에 저장, 일반에외 발생, try ~ catch
+            diary.read(inBytes);
+            //(5) 읽어온 바이트를 문자열로 변환
+           String inStr = new String( inBytes);
+        }catch (FileNotFoundException e){
+            System.out.println("파일 또는 경로가 존재하지 않습니다."+ e);
+        }catch (IOException e){
+            System.out.println("파일 읽어오는데 문제가 발생했습니다"+e);
+        }
 //
 //[문제 3] File 클래스로 파일 정보 확인하기
 //        1. File 객체를 src/diary.txt 경로로 생성하세요.
@@ -54,24 +69,31 @@ public class 실습15 {//class s
 //        3. 프로그램을 여러 번 실행하여 방문 기록이 계속 누적되는지 확인하세요.
 //
         try {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("방문자 이름 : ");
-            String str = scan.next();
-
+            Scanner scan = new Scanner(System.in); //입력받기
+            System.out.print("방문자 이름 : ");
+            String name = scan.next();
+            //2.  문자열 연결 : +
+            String outStr = name + "님이 방문했습니다.\n";
+            //3. 파일 경로 지정
             String path1 = "./src/day16/visit_log.txt";
-            FileOutputStream fout = new FileOutputStream(path1);
-            byte[] outBytes = str.getBytes();
-            fout.write(outBytes);
-
+            //4. 지정 경로에 파일 존재여부 확인
             File file = new File(path1);
-
-            if (file.exists()) {
-                FileInputStream fin = new FileInputStream(path1);
-                byte[] inByte = new byte[(int)file.length()];
-                fin.read(inByte);
-                String inStr = new String(inByte);
-                System.out.println(inStr+"님이 방문했습니다.\n");
-            }
+//            String inStr =""; //공백문자열
+//            if (file.exists()) { // 파일 존재하면 // 입력
+//                //5. 파일 입력 객체
+//                FileInputStream fin = new FileInputStream(path1);
+//                //6. 파일 용량 만큼 배열 선언
+//                byte[] bytes = new byte[(int)file.length()];
+//                //7. 읽어오기
+//                fin.read(bytes);
+//                inStr = new String(bytes); // 8.문자열로 변환
+//            }
+//            inStr += outStr; // 9. 불러온 문자열과 입력받은 문자열 연결
+//            FileOutputStream foutput = new FileOutputStream(path1); //10. 출력객체
+//            byte[] bytes = inStr.getBytes(); // 11. 바이트로 변환
+//            foutput.write(bytes); //12. 바이트 내보내기
+            FileOutputStream foutput = new FileOutputStream(path1, true);
+            foutput.write(outStr.getBytes());
         }catch (Exception e){
             System.out.println(e);
         }
@@ -150,28 +172,28 @@ public class 실습15 {//class s
 //        3. 읽어온 전체 내용을 줄바꿈(\n) 기준으로 분리하여 String 배열에 저장하세요.
 //        4. for문을 사용하여 배열의 각 줄(각 동의 인구 정보)을 순회하며, '행정기관'과 '총인구수'만 추출하여 "동별: [ 동별 ], 총 인구: [ 인구수(계)   ]명" 형식으로 출력하세요.
         //(1) 파일 존재 여부 확인
-//            try {
-//                String path = "src/day16/인천광역시 부평구_인구 현황_20250131 (1).csv";
-//                File file = new File(path);
-//
-//                //(2) 존재하면 파일 읽어오기
-//                if (file.exists()) {
-//                    FileInputStream fin = new FileInputStream(path); //(3) 파일 입력 객체 생성
-//                    byte[] bytes = new byte[(int) file.length()];// 읽어온 바이트를 저장할 바이트 배열을 용량 만큼 선언
-//                    fin.read(bytes);//바이트 읽어서 배열에 저장
-//                    String str = new String(bytes, "EUC-KR");
-//
-//                    String[] 행데이터 = str.split("\n"); // 행 단위로 쪼개서 배열에 저장
-//                    for (int i = 0; i < 행데이터.length; i++) {
-//                        String row = 행데이터[i];
-//                        //System.out.println(row);// 한 줄(행/row) 씩 출력
-//                        String[] 열데이터 = row.split(",");
-//                        //System.out.println( 열데이터[0]);   //동별
-//                        //System.out.println(열데이터[1]);    //총 인구
-//                        System.out.printf("동별: %s , 총 인구: %s명, \n", 열데이터[0], 열데이터[1]);
-//                    }
-//                }
-//            }catch (Exception e){
-//                System.out.println(e);}
+            try {
+                String path3 = "src/day16/인천광역시 부평구_인구 현황_20250131 (1).csv";
+                File file = new File(path);
+
+                //(2) 존재하면 파일 읽어오기
+                if (file.exists()) {
+                    FileInputStream fin = new FileInputStream(path3); //(3) 파일 입력 객체 생성
+                    byte[] bytes = new byte[(int) file.length()];// 읽어온 바이트를 저장할 바이트 배열을 용량 만큼 선언
+                    fin.read(bytes);//바이트 읽어서 배열에 저장
+                    String str = new String(bytes, "EUC-KR");
+
+                    String[] 행데이터 = str.split("\n"); // 행 단위로 쪼개서 배열에 저장
+                    for (int i = 0; i < 행데이터.length; i++) {
+                        String row = 행데이터[i];
+                        //System.out.println(row);// 한 줄(행/row) 씩 출력
+                        String[] 열데이터 = row.split(",");
+                        //System.out.println( 열데이터[0]);   //동별
+                        //System.out.println(열데이터[1]);    //총 인구
+                        System.out.printf("동별: %s , 총 인구: %s명, \n", 열데이터[0], 열데이터[1]);
+                    }
+                }
+            }catch (Exception e){
+                System.out.println(e);}
     }//main e
 }//class e
