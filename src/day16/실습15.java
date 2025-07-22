@@ -83,6 +83,7 @@ public class 실습15 {//class s
 //        3. 해당 문자열을 contacts.csv 파일에 저장하세요. (줄바꿈 문자 \n 포함)
 //
 //
+        try {
             Scanner scan = new Scanner(System.in);
             System.out.println("이름: ");
             String name = scan.next();
@@ -91,7 +92,16 @@ public class 실습15 {//class s
             System.out.println("사는 도시: ");
             String city = scan.next();
 
+            String contact = name + "," + phone + "," + city + ",";
+
             String path2 = "./src/day16/contacts.csv";
+            FileOutputStream fout = new FileOutputStream(path2);
+            byte[] outByte = contact.getBytes();
+            fout.write(outByte);
+        }catch (Exception e){
+            System.out.println("예외발생"+e);
+        }
+
 
 
 
