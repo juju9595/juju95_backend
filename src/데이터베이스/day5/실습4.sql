@@ -116,10 +116,11 @@ select price from books where genre = '컴퓨터' order by price desc limit 1;
 -- [문제 12] books 테이블의 '소설' 장르 도서들의 총 재고 수량을 조회하세요.
 select sum(stock) from books where genre = '소설';
 -- [문제 13] orders 테이블에서 주문을 한 고객이 총 몇 명인지 조회하세요. (DISTINCT 사용)
-select sum(order_id ) from orders;
+select count(*) from orders;
 -- [문제 14] orders 테이블에서 고객별로 첫 주문일과 마지막 주문일을 조회하세요.
-
+select customer, min(date) and max(date) from orders group by customer;
 -- [문제 15] orders 테이블에서 도서별 평균 주문 수량을 조회하세요.
+select book_id, count(*) from orders group by book_id;
 
 -- [문제 16] books 테이블에서 장르별 평균 가격이 18000원을 초과하는 장르와 그 평균 가격을 조회하세요.
 
