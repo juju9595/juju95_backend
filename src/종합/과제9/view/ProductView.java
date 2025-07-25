@@ -14,6 +14,8 @@ public class ProductView {
     }
 
     private Scanner scan = new Scanner(System.in);
+
+    //*ProductController 싱글톤 불러오기
     private ProductController productController = ProductController.getInstance();
 
     //메인화면

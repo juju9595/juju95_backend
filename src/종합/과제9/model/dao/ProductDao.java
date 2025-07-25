@@ -26,10 +26,13 @@ public class ProductDao {
             System.out.println(e);
         }
     }
+
+    // 등록기능 구현
     public boolean productWrite(ProductDto productDto){
         try{
             String sql = "insert into products (puser,pname,pcontent,pprice,ppassword) values(?,?,?,?,?);";//SQL 작성한다.
             PreparedStatement ps = conn.prepareStatement(sql); //SQL 기재한다.
+            // SQL 매개변수 대입, 현재 ? 5개
             ps.setString(1, productDto.getPcontent());
             ps.setString(2, productDto.getPcontent());
             ps.setString(3, productDto.getPcontent());
