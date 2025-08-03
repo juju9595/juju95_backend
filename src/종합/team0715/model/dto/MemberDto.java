@@ -11,6 +11,13 @@ public class MemberDto {
     //2.생성자
     public MemberDto(){}
 
+    public MemberDto(String mid, String mpwd, String mphone, String mname) {
+        this.mid = mid;
+        this.mpwd = mpwd;
+        this.mphone = mphone;
+        this.mname = mname;
+    }
+
     public MemberDto(int mno, String mid, String mpwd, String mphone, String mname) {
         this.mno = mno;
         this.mid = mid;

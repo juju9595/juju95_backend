@@ -31,13 +31,20 @@ public class MemberView {//class s
 
     //3) 회원가입 등록 입출력 구현
     public boolean signup(){
-        boolean result = false;
+        System.out.println("--- 회원 가입 ---");
+        System.out.println("아이디 : "); String mid = scan.next();
+        System.out.println("비밀번호 : "); String mpwd = scan.next();
+        System.out.println("이름 : "); String mname = scan.next();
+        System.out.println("연락처 : "); String mphone = scan.next();
+        boolean result = true;
+        System.out.println("[안내] 회원가입이 완료되었습니다.");
         return result;
     }
 
     //3) 로그인 등록 입출력 구현
     public boolean login(){
-        boolean result = false;
+
+        boolean result = true;
         return result;
     }
 

@@ -11,5 +11,11 @@ public class MemberController {//class s
     } //public static MemberController end
     private MemberDao memberDao = MemberDao.getInstance();
 
+    //3)등록 기능 구현
+
+    public boolean signup(String mid, String mpwd, String mname, String mphone){
+        boolean result = false;
+        return result;
+    }
     //
 }//class e

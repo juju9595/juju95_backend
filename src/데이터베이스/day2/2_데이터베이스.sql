@@ -93,4 +93,5 @@ create table board(								-- [2] 게시물 테이블
 );
 select *from board;
 # 여럿 테이블 간의 관계 확인(다이어그램)
-# workbench 상단메뉴 -> [database] ->
+# workbench 상단메뉴 -> [database] -> [reverse engineer ] -> stored conntion : local(선택)
+# -> 비밀번호입력[]
